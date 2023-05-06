@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface TransactionRepo extends JpaRepository<Transaction,Long> {
     public List findAllByStatus(String status);
-    public List findAllByUserId(String userId);
+    public List findAllByUserName(String userId);
+    public Transaction findById(int trxId);
 }
 

@@ -51,4 +51,10 @@ public class ProductController {
     public Product getProductByProdId(@PathVariable("prodId") String prodId){
         return productService.getProductByProductId(prodId);
     }
+
+    @GetMapping("/reducestock/{prodId}+{stock}")
+    @ResponseStatus(HttpStatus.OK)
+    public void addProduct(@PathVariable("prodId") String prodId, @PathVariable("stock") int stock){
+        productService.decreaseStock(prodId,stock);
+    }
 }
