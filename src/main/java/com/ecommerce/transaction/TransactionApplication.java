@@ -8,7 +8,6 @@ public class TransactionApplication {
 
 	public static void main(String[] args) {
 
-		System.out.println("JAHSKJASHKAJSHKAHSKJAHKSJH");
 		SpringApplication.run(TransactionApplication.class, args);
 	}
 

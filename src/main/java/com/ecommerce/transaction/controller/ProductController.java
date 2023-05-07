@@ -36,8 +36,14 @@ public class ProductController {
 
     @PostMapping("/update/price/{prodId}+{price}")
     @ResponseStatus(HttpStatus.OK)
-    public void addProduct(@PathVariable("prodId") String prodId, @PathVariable("price") BigDecimal price){
+    public void updateProduct(@PathVariable("prodId") String prodId, @PathVariable("price") BigDecimal price){
         productService.updateProductPrice(prodId, price);
+    }
+
+    @PostMapping("/update/name/{prodId}+{name}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateNameProduct(@PathVariable("prodId") String prodId, @PathVariable("name") String name){
+        productService.updateProductName(prodId, name);
     }
 
     @GetMapping("/getStock/{prodId}")
@@ -57,4 +63,11 @@ public class ProductController {
     public void addProduct(@PathVariable("prodId") String prodId, @PathVariable("stock") int stock){
         productService.decreaseStock(prodId,stock);
     }
+
+    @PostMapping("/update/delete/{prodId}")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateNameProduct(@PathVariable("prodId") String prodId){
+        productService.deleteProduct(prodId);
+    }
+
 }

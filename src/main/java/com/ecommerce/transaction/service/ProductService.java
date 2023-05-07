@@ -68,8 +68,11 @@ public class ProductService {
     //soft delete Product
     public void deleteProduct(String productId){
         Product product = this.getProductByProductId(productId);
-        product.setDeleteFlag(ECOMMERCE_CONSTANT.YES);
-        productRepo.save(product);
+        if (product != null){
+            product.setDeleteFlag(ECOMMERCE_CONSTANT.YES);
+            productRepo.save(product);
+        }
+
     }
 
     //Check Stock by product Id
